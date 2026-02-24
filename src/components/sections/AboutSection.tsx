@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/use-in-view";
+import Image from "next/image";
 import { Award, BookOpen, GraduationCap, Heart, Stethoscope } from "lucide-react";
 
 const credentials = [
@@ -18,6 +19,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 lg:py-28 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
           {/* Left - visual */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -26,19 +28,19 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="relative bg-gradient-to-br from-[#f0f5f0] to-[#f5f0eb] rounded-3xl p-8 lg:p-12">
-              {/* Doctor illustration area */}
+              
+              {/* ✅ Doctor image area */}
               <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-[#2d6a4f]/5 to-[#d4a574]/5 flex items-center justify-center relative overflow-hidden">
-                <div className="text-center space-y-4">
-                  <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-br from-[#2d6a4f]/15 to-[#52b788]/15 flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" className="w-28 h-28 text-[#2d6a4f]/30">
-                      <circle cx="50" cy="35" r="18" fill="currentColor" />
-                      <path d="M20 90 Q20 60 50 55 Q80 60 80 90" fill="currentColor" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#2d6a4f]">Dr. Amirtha</h3>
-                    <p className="text-sm text-[#5c6b5c]">BSMS, Gold Medalist</p>
-                  </div>
+                
+                {/* REAL IMAGE */}
+                <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="/doctor.jpg"
+                    alt="Dr. Amirtha Siddha Doctor"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
 
                 {/* Decorative corner elements */}
@@ -75,12 +77,16 @@ export default function AboutSection() {
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1a2e1a] leading-tight">
               Meet Dr. Amirtha
             </h2>
+
             <p className="mt-6 text-[#5c6b5c] leading-relaxed text-lg">
-              Dr. Amirtha is a proud BSMS (Bachelor of Siddha Medicine &amp; Surgery) graduate and a distinguished <strong className="text-[#1a2e1a]">Gold Medalist</strong>, recognized for academic excellence and deep understanding of classical Siddha principles.
+              Dr. Amirtha is a proud BSMS (Bachelor of Siddha Medicine &amp; Surgery) graduate and a distinguished{" "}
+              <strong className="text-[#1a2e1a]">Gold Medalist</strong>, recognized for academic excellence and deep understanding of classical Siddha principles.
             </p>
+
             <p className="mt-4 text-[#5c6b5c] leading-relaxed">
               As a certified Siddha physician, Dr. Amirtha specializes in identifying and treating root causes of health conditions through time-tested Siddha methodologies — from pulse-based diagnosis to personalized herbal formulations and lifestyle guidance.
             </p>
+
             <p className="mt-4 text-[#5c6b5c] leading-relaxed">
               Known online as <strong className="text-[#2d6a4f]">The Siddha Scholar</strong>, Dr. Amirtha is passionate about busting health myths, educating young adults, and making authentic Siddha knowledge accessible to everyone through educational content and online consultations.
             </p>
